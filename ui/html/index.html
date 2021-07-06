@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload files</title>
+</head>
+<body>
+
+    <!--  HTML forms provide three methods of encoding.
+    application/x-www-form-urlencoded (the default)
+    multipart/form-data
+    text/plain
+    
+    Never use text/plain.
+    use multipart/form-data when your form includes any <input type="file"> elements; aka file uploads
+    otherwise use application/x-www-form-urlencoded 
+
+    name="myFile" must match the backend's 
+        r.FormFile("myFile") 
+ -->
+
+    <form action="http://localhost:8080/upload" enctype="multipart/form-data" method="POST">
+        <input type="file" name="myFile"/>
+        <input type="submit" value="upload the file" />
+    </form>
+    
+</body>
+</html>
